@@ -7,7 +7,8 @@
   <arg name="marker_filtered_id" default="marker_id0_filtered" doc="Name of the filtered marker"/>
   <arg name="rate" default="125" doc="TF publish rate (Hz)"/>
 
-  <node pkg="simple_aruco_detector" type="marker_filter.py" name="aruco_marker_filter" output="screen">
+  <node pkg="simple_aruco_detector" type="marker_filter.py" name="marker_id$(arg marker_id)_filter"
+	output="screen">
     <param name="alpha" type="double" value="$(arg alpha)"/>
     <param name="marker_id" type="string" value="$(arg marker_id)"/>
     <param name="parent_frame_id" type="string" value="$(arg parent_frame_id)"/>
