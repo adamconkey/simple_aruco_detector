@@ -40,8 +40,9 @@ if __name__ == '__main__':
 
             if not marker_pose_new is None:
                 marker_pose = marker_pose_new
-        except (tf2_ros.LookupException, tf2_ros.ConnectivityException, tf2_ros.ExtrapolationException) as e:
-            rospy.logwarn(e)
+        except (tf2_ros.LookupException, tf2_ros.ConnectivityException,
+                tf2_ros.ExtrapolationException) as e:
+            pass
 
         if marker_pose is None:
             rate.sleep()
